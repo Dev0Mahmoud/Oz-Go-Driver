@@ -4,27 +4,30 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/headline_text.dart';
 
 class TotalPrice extends StatelessWidget {
-  const TotalPrice({Key? key}) : super(key: key);
+
+  final double width;
+  final double height;
+  final double fontSize;
+
+
+
+  const TotalPrice({Key? key,this.width = 200 ,this.height =200 , this.fontSize = 45}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          width: 200.w,
-          height: 200.h,
+          width: width.w,
+          height: height.h,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment(0.0, 0.0),
-              end: Alignment.bottomCenter,
-              colors: [AppColor.blue, AppColor.blue.withOpacity(.5)],
-            ),
+            color: AppColor.buttonColor,
             borderRadius: BorderRadius.circular(200.r),
           ),
           child: Center(
               child: HeadLineText(
             text: '200.14',
             color: AppColor.white,
-            fontSize: 45.sp,
+            fontSize: fontSize.sp,
           ))),
     );
   }

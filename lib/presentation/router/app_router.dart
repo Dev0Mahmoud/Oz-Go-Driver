@@ -6,7 +6,7 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const Test());
+        return MaterialPageRoute(builder: (_) => Test());
     }
   }
 }
