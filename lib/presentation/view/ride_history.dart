@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
+import 'package:oz_go_driver/presentation/widget/from_to_component.dart';
 
 class RideHistory extends StatelessWidget {
   const RideHistory({Key? key}) : super(key: key);
@@ -29,64 +30,7 @@ class RideHistory extends StatelessWidget {
       child: Column(
         children: [
           /// address
-          Expanded(
-              flex: 3,
-              child: Row(
-                children: [
-                  Column(
-                    children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Icon(
-                            Icons.circle_outlined,
-                            size: 25,
-                            color: AppColor.buttonColor,
-                          ),
-                          Icon(
-                            Icons.circle,
-                            size: 13,
-                            color: AppColor.buttonColor,
-                          )
-                        ],
-                      ),
-                      CustomPaint(
-                          size: Size(1.w, 35.h),
-                          painter: DashedLineVerticalPainter()),
-                      RadiantGradientMask(
-                        child: Icon(
-                          Icons.location_pin,
-                          size: 25,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '7958 Swift Village',
-                          style: TextStyle(
-                              fontSize: 17.sp,
-                              color: AppColor.rideHistoryFontColor),
-                        ),
-                        Container(
-                          height: 35.h,
-                        ),
-                        Text('105 William St, Sydney',
-                            style: TextStyle(
-                                fontSize: 17.sp,
-                                color: AppColor.rideHistoryFontColor)),
-                      ],
-                    ),
-                  ),
-                ],
-              )),
-
+          FromToComponent(),
           /// divider
           Container(
             height: 1,
