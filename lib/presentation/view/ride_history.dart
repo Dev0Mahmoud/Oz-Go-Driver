@@ -8,7 +8,11 @@ class RideHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(
+        top: 10,
+        right: 10,
+        left: 10,
+      ),
       width: 345.w,
       height: 150.h,
       decoration: BoxDecoration(
@@ -94,6 +98,7 @@ class RideHistory extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              /// money text 75.00
               Row(
                 children: [
                   Icon(
@@ -109,9 +114,13 @@ class RideHistory extends StatelessWidget {
                   )
                 ],
               ),
+
+              /// [ track , completed , cancelled ]
               Row(
                 children: [
                   TextButton(
+
+                      /// routing
                       onPressed: () {},
                       child: Text(
                         'Track',
@@ -123,7 +132,7 @@ class RideHistory extends StatelessWidget {
                   Icon(
                     Icons.arrow_forward_ios_sharp,
                     color: AppColor.grey.withOpacity(.8),
-                    size: 15,
+                    size: 20,
                   )
                 ],
               ),
