@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oz_go_driver/presentation/view/ride_history.dart';
 
 class Test extends StatelessWidget {
   const Test({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: CircleProgressComponent(),
+      body: Center(child: RideHistory()),
     );
   }
 }

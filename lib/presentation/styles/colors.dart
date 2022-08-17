@@ -20,4 +20,8 @@ class AppColor {
   static const Color buttonSecondColor = Color(0xFF1C87A9);
   static const Color chatColor = Color(0xFF119ECA);
   static const Color starColor = Color(0xFFED8A19);
+  static const Color locationRedColor1 = Color(0xFFFF0000);
+  static const Color locationRedColor2 = Color(0xFFA91C1C);
+  static const Color rideHistoryFontColor = Color(0xFF242E42);
+  static const Color trackFontColor = Color(0xFF4252FF);
 }

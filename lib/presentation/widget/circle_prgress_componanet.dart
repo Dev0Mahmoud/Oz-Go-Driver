@@ -11,26 +11,28 @@ class CircleProgressComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CircularPercentIndicator(radius: 68.r,
+      child: CircularPercentIndicator(
+        radius: 68.r,
         animation: true,
         animationDuration: 1000,
         lineWidth: 14.w,
         percent: .55,
         center: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:
-          [
-            MediumText( text: '2525',),
+          children: [
+            MediumText(
+              text: '2525',
+            ),
             SizedBox(
               height: 9.h,
             ),
             RegularText(text: 'Total Trips')
           ],
         ),
-
         circularStrokeCap: CircularStrokeCap.butt,
         backgroundColor: AppColor.offWhite,
-        progressColor: AppColor.blue,),
-    ) ;
+        progressColor: AppColor.blue,
+      ),
+    );
   }
 }
