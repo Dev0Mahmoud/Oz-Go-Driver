@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           return LayoutBuilder(
             builder: (context, constraints) {
               return ScreenUtilInit(
-                designSize: Size(390, 844),
+                designSize: Size(375, 812),
                 builder: (context, child) {
                   return MaterialApp(
                     debugShowCheckedModeBanner: false,

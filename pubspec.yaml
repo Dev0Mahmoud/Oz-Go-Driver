@@ -49,6 +49,10 @@ dependencies:
   flutter_svg: ^1.1.1+1
   flutter_launcher_icons: ^0.9.3
   flutter_screenutil: ^5.5.3+2
+  dependencies:
+  flutter_switch: ^0.3.2
+  percent_indicator: ^4.2.2
+
 
   intl_phone_number_input: ^0.7.0+2
   carousel_slider: ^4.0.0
