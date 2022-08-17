@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:oz_go_driver/presentation/view/ride_history.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
@@ -10,7 +11,19 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(child: RideHistory()),
+      body: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 40.h),
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+
+          child: Column(
+            children: [
+              TripDetailsView(),
+            ],
+          ),
+        ),
+      ),
+
     );
   }
 }
