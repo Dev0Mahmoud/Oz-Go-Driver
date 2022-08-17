@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/constants/assets_manager.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
+import 'package:oz_go_driver/presentation/widget/quick_comment_selection.dart';
 import '../styles/colors.dart';
 import '../widget/default_button.dart';
 
-class FilterBottomSheet extends StatefulWidget {
-  const FilterBottomSheet({Key? key}) : super(key: key);
+class ReviewBottomSheet extends StatefulWidget {
+  const ReviewBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<FilterBottomSheet> createState() => _FilterBottomSheetState();
+  State<ReviewBottomSheet> createState() => _ReviewBottomSheetState();
 }
 
-class _FilterBottomSheetState extends State<FilterBottomSheet> {
+class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -68,6 +69,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                       color: Colors.black87,
                     )),
               ),
+
+              /// person circle avatar , review star count
               Row(
                 children: [
                   DefaultCircleAvatar(
@@ -89,6 +92,52 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         }),
                   )
                 ],
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+
+              /// quick comment selection
+              Container(
+                width: double.infinity,
+                child: Wrap(
+                  spacing: 15.w,
+                  runSpacing: 20.h,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  runAlignment: WrapAlignment.start,
+                  children: [
+                    QuickCommentSelection(
+                        onTap: () {
+                          /// Todo:
+                        },
+                        width: 180.w,
+                        text: 'Concerned about the captain\'s needs'),
+                    QuickCommentSelection(
+                      width: 120.w,
+                      text: ' Very friendly',
+                      onTap: () {
+                        /// Todo:
+                      },
+                    ),
+                    QuickCommentSelection(
+                      width: 120.w,
+                      text: 'Fantastic track',
+                      onTap: () {
+                        /// Todo:
+                      },
+                    ),
+                    QuickCommentSelection(
+                      width: 120.w,
+                      text: 'Fantastic driving',
+                      onTap: () {
+                        /// Todo:
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30.h,
               ),
 
               /// Send Button
