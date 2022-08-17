@@ -6,9 +6,9 @@ import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 
 class CustomerDriverHeaderView extends StatelessWidget {
-  final  bool isSecondTitle ;
-  final bool isSuffix ;
-  final bool isTitle ;
+  final bool isSecondTitle;
+  final bool isSuffix;
+  final bool isTitle;
 
   Widget defaultSecondTitle = Row(
     children: [
@@ -27,9 +27,15 @@ class CustomerDriverHeaderView extends StatelessWidget {
   final Widget? suffix;
 
   CustomerDriverHeaderView(
-      {Key? key, required this.image, this.secondTitle,this.suffix,this.title,this.isSecondTitle = true,this.isSuffix = true,this.isTitle = true})
-      : super(key: key) {
-  }
+      {Key? key,
+      required this.image,
+      this.secondTitle,
+      this.suffix,
+      this.title,
+      this.isSecondTitle = true,
+      this.isSuffix = true,
+      this.isTitle = true})
+      : super(key: key) {}
 
   @override
   Widget build(BuildContext context) {
@@ -45,40 +51,39 @@ class CustomerDriverHeaderView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if(isTitle)
-                  MediumText(text: 'Hossam Saeed')
+                if (isTitle)
+                  MediumText(
+                    text: 'Hossam Saeed',
+                  )
                 else
                   title!,
                 SizedBox(
                   height: 7.h,
                 ),
-                if(isSecondTitle)
-                  defaultSecondTitle
-                else
-                  secondTitle!
+                if (isSecondTitle) defaultSecondTitle else secondTitle!
               ],
             ),
           ),
-          if(isSuffix)
+          if (isSuffix)
             Expanded(
-            child: CircleAvatar(
-              radius: 30.r,
-              backgroundColor: AppColor.chatColor,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MediumText(
-                    text: '12',
-                    color: AppColor.white,
-                  ),
-                  MediumText(
-                    text: 'Sec',
-                    color: AppColor.white,
-                  ),
-                ],
+              child: CircleAvatar(
+                radius: 30.r,
+                backgroundColor: AppColor.chatColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MediumText(
+                      text: '12',
+                      color: AppColor.white,
+                    ),
+                    MediumText(
+                      text: 'Sec',
+                      color: AppColor.white,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          )
+            )
           else
             suffix!,
         ],
