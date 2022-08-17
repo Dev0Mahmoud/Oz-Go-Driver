@@ -22,3 +22,12 @@ class AppColor {
   static const Color parbel = Color(0xFF4252FF);
   static const Color blue = Color(0xFF4780A8);
 }
+
+class AppGradient {
+  static LinearGradient primaryGradient = LinearGradient(
+    colors: [Color(0xFF2587A5), Color.fromRGBO(0, 194, 255, 0.49)],
+    stops: [0.0, 1.0],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+}
