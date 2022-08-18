@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:oz_go_driver/presentation/screens/user/contact_us_screen.dart';
 import 'package:oz_go_driver/presentation/screens/user/infite_firend_screen.dart';
+import 'package:oz_go_driver/presentation/screens/user/language_screen.dart';
+import 'package:oz_go_driver/presentation/screens/user/terms_screen.dart';
+import 'package:oz_go_driver/presentation/screens/user/your_trip_screen.dart';
 import 'package:oz_go_driver/presentation/view/contact_us_view.dart';
 import 'package:oz_go_driver/presentation/view/language_view.dart';
 
@@ -25,7 +29,7 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return InviteFriendScreen();
+    return YourTripScreen();
 
   }
 }

@@ -93,15 +93,15 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
             fillColor: widget.fillColor ?? Colors.white,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: widget.focusedBorderColor ?? Colors.black),
-              borderRadius: BorderRadius.circular(19.r),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: widget.borderColor ?? Colors.black),
-              borderRadius: BorderRadius.circular(19.r),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: widget.errorBorderColor ?? Colors.red),
-              borderRadius: BorderRadius.circular(19.r),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             errorStyle: widget.errorStyle,
             labelText: widget.label,

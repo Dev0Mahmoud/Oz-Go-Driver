@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
         horizontal: 10.w,
       ),
       decoration: BoxDecoration(
-        gradient: AppGradient.primaryGradient,
+        color: AppColor.buttonColor,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
