@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
+import '../styles/colors.dart';
+
 class DefaultPhoneNumFormField extends StatefulWidget {
   TextEditingController? controller;
   String label;
@@ -35,6 +37,7 @@ class _DefaultPhoneNumFormFieldState extends State<DefaultPhoneNumFormField> {
         height: widget.height ?? 60.h,
         width: double.infinity,
         child: InternationalPhoneNumberInput(
+
           onInputChanged: (PhoneNumber number) {
                 setState((){
                   isEmpty = false;
@@ -53,6 +56,8 @@ class _DefaultPhoneNumFormFieldState extends State<DefaultPhoneNumFormField> {
             selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
             leadingPadding: 10.r,
             trailingSpace: false,
+
+
           ),
           ignoreBlank: false,
           autoValidateMode: AutovalidateMode.disabled,
@@ -69,25 +74,25 @@ class _DefaultPhoneNumFormFieldState extends State<DefaultPhoneNumFormField> {
             label: Text(
               label!,
             ),
-            suffixIcon: isEmpty ? SizedBox() :
-            IconButton(onPressed: () {
+            suffixIcon: isEmpty ? SizedBox() : IconButton(onPressed: () {
              setState((){
                isEmpty = true;
                controller!.clear();
                print( ' mahmoud ${controller!.text}');
              });
             }, icon: Icon(
-                Icons.cancel
+                Icons.cancel,
+              size: 18,
+              color: AppColor.grey,
             ),),
-            labelStyle:
-                TextStyle(color: Colors.black,),
+            labelStyle: TextStyle(color: Colors.black,),
             enabled: true,
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(19),
+              borderRadius: BorderRadius.circular(8),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.black),
-              borderRadius: BorderRadius.circular(19),
+              borderRadius: BorderRadius.circular(8),
             ),
           ),
           keyboardType:
