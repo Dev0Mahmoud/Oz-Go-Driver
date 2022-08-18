@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:oz_go_driver/presentation/screens/user/history_screen.dart';
-import 'package:oz_go_driver/presentation/screens/user/rating_screen.dart';
-import 'package:oz_go_driver/presentation/styles/colors.dart';
-import 'package:oz_go_driver/presentation/widget/default_indicator.dart';
-import 'package:oz_go_driver/presentation/widget/default_phone_number_form_field.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:oz_go_driver/presentation/screens/user/infite_firend_screen.dart';
+import 'package:oz_go_driver/presentation/view/contact_us_view.dart';
+import 'package:oz_go_driver/presentation/view/language_view.dart';
+
+import 'package:oz_go_driver/presentation/view/ride_history.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:oz_go_driver/presentation/view/app_drawer.dart';
+import 'package:oz_go_driver/presentation/view/satrt_trip_view.dart';
+import 'package:oz_go_driver/presentation/view/terms_view.dart';
+import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
+
 
 class Test extends StatefulWidget {
   const Test({Key? key}) : super(key: key);
@@ -19,12 +25,7 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(child:
-        DefaultIndicator(length: 3, controller: controller,)),
-      ),
-    );
+    return InviteFriendScreen();
+
   }
 }
