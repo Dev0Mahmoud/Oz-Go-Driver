@@ -61,6 +61,7 @@ class CustomAppBar extends StatelessWidget {
               style: TextStyle(
                   color: AppColor.white,
                   fontSize: 25.sp,
+                  fontFamily: 'Mont',
                   fontWeight: FontWeight.w700),
             ),
           ),
