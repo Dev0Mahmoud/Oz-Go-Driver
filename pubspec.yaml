@@ -99,5 +99,11 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/font/Poppins-Regular.ttf
+    - family: Mont
+      fonts:
+        - asset: assets/font/Mont-Regular.otf
+    - family: SF
+      fonts:
+        - asset: assets/font/SFProText-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

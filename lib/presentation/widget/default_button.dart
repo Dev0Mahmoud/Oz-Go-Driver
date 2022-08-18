@@ -10,8 +10,9 @@ class DefaultButton extends StatelessWidget {
       required this.onPressed,
       required this.height,
       required this.width,
-        this.color = AppColor.buttonColor,
-        this.secondColor = AppColor.buttonSecondColor,
+      this.color = AppColor.buttonColor,
+      this.secondColor = AppColor.buttonSecondColor,
+      this.radius = 8,
       this.textStyle})
       : super(key: key);
   TextStyle? textStyle;
@@ -21,6 +22,8 @@ class DefaultButton extends StatelessWidget {
   final double? height;
   final Color color;
   final Color secondColor;
+  final double radius;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,12 +33,9 @@ class DefaultButton extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment(0.0, 0.0),
           end: Alignment.bottomRight,
-          colors: [
-            color,
-            secondColor.withOpacity(.8)
-          ],
+          colors: [color, secondColor.withOpacity(.8)],
         ),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(radius),
       ),
       child: MaterialButton(
         minWidth: 0,
