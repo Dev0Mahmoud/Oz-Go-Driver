@@ -17,6 +17,9 @@ class TripDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.r)
+      ),
       child: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 25.w ,vertical: 22.h),
         child: Column(
