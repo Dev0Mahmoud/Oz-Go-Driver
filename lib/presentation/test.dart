@@ -8,6 +8,7 @@ import 'package:oz_go_driver/presentation/widget/default_phone_number_form_field
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+
 class Test extends StatefulWidget {
   const Test({Key? key}) : super(key: key);
 
@@ -22,6 +23,8 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
+
     return contact_screen(title: 'contacts',);
+
   }
 }
