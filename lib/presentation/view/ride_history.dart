@@ -4,85 +4,124 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/from_to_component.dart';
 
 class RideHistory extends StatelessWidget {
-  const RideHistory({Key? key}) : super(key: key);
+  RideHistory({Key? key, required this.tripStatusText}) : super(key: key);
+  final String tripStatusText;
+
+  Color? tripStatus() {
+    if (tripStatusText == 'Track') {
+      return AppColor.trackFontColor;
+    } else if (tripStatusText == 'Completed') {
+      return AppColor.buttonColor;
+    } else if (tripStatusText == 'Cancelled') {
+      return AppColor.grey;
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 10,
-        right: 10,
-        left: 10,
-      ),
-      width: 345.w,
-      height: 150.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(.5),
-            offset: Offset(0.0, 1.0), //(x,y)
-            blurRadius: 3.0,
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          /// address
-          FromToComponent(),
-          /// divider
-          Container(
-            height: 1,
-            color: Colors.black12,
-          ),
-
-          Expanded(
-              child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              /// money text 75.00
-              Row(
-                children: [
-                  Icon(
-                    Icons.monetization_on,
-                    color: AppColor.grey,
-                  ),
-                  Text(
-                    ' \$75.00',
-                    style: TextStyle(
-                        fontSize: 17.sp,
-                        color: AppColor.rideHistoryFontColor,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Container(
+        padding: EdgeInsets.only(
+          top: 10,
+          right: 10,
+          left: 10,
+        ),
+        width: 345.w,
+        height: 150.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(.5),
+              offset: Offset(0.0, 1.0), //(x,y)
+              blurRadius: 3.0,
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            /// address
+            Expanded(
+              flex: 2,
+              child: Container(
+                child: Row(
+                  children: [
+                    FromToComponent(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('7958 Swift Village'),
+                          Text('105 William St, Sydney'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
+            ),
 
-              /// [ track , completed , cancelled ]
-              Row(
-                children: [
-                  TextButton(
+            /// divider
+            Container(
+              height: 1,
+              color: Colors.black12,
+            ),
 
-                      /// routing
-                      onPressed: () {},
-                      child: Text(
-                        'Track',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 15.sp,
-                            color: AppColor.trackFontColor),
-                      )),
-                  Icon(
-                    Icons.arrow_forward_ios_sharp,
-                    color: AppColor.grey.withOpacity(.8),
-                    size: 20,
-                  )
-                ],
-              ),
-            ],
-          )),
-        ],
+            Expanded(
+                child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// money text 75.00
+                Row(
+                  children: [
+                    Icon(
+                      Icons.monetization_on,
+                      color: AppColor.grey,
+                    ),
+                    Text(
+                      ' \$75.00',
+                      style: TextStyle(
+                          fontSize: 17.sp,
+                          color: AppColor.rideHistoryFontColor,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+
+                /// [ Track , Completed , Cancelled ]
+                Row(
+                  children: [
+                    TextButton(
+
+                        /// routing
+                        onPressed: () {},
+                        child: Text(
+                          tripStatusText,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 15.sp,
+                              color: tripStatus()),
+                        )),
+                    Icon(
+                      Icons.arrow_forward_ios_sharp,
+                      color: AppColor.grey.withOpacity(.8),
+                      size: 20,
+                    )
+                  ],
+                ),
+              ],
+            )),
+          ],
+        ),
       ),
     );
   }
