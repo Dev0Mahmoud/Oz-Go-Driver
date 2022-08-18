@@ -25,6 +25,7 @@ class AppColor {
   static const Color trackFontColor = Color(0xFF4252FF);
   static const Color parbel = Color(0xFF4252FF);
   static const Color blue = Color(0xFF4780A8);
+  static const Color driverReviewTextColor = Color(0xFFC4C4C4);
   static const Color drawerIcon = Color.fromARGB(255, 136, 136, 136);
 }
 
