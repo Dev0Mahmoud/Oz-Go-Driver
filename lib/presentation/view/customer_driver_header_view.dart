@@ -75,10 +75,14 @@ class CustomerDriverHeaderView extends StatelessWidget {
                     MediumText(
                       text: '12',
                       color: AppColor.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp,
                     ),
                     MediumText(
                       text: 'Sec',
                       color: AppColor.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp,
                     ),
                   ],
                 ),

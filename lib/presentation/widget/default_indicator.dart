@@ -6,10 +6,10 @@ import '../styles/colors.dart';
 class DefaultIndicator extends StatelessWidget {
   var controller = PageController();
   int length;
-   DefaultIndicator({
+  DefaultIndicator({
     Key? key,
     required this.controller,
-     required this.length,
+    required this.length,
   }) : super(key: key);
 
   @override
