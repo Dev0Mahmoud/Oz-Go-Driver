@@ -9,21 +9,20 @@ class LanguageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Card(
-        child: Padding(
-          padding:  EdgeInsets.all(25.r),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MediumText(text: 'Choose Your Language'),
-              SizedBox(height: 65.h,),
-              Center(child: DropDownComponent()),
-              Spacer(),
-              Center(child: DefaultButton(onPressed: (){},label: 'Done',height: 45.h,width: 244.w,),),
-            ],
-          ),
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+
+      child: Padding(
+        padding:  EdgeInsets.all(25.r),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MediumText(text: 'Choose Your Language'),
+            SizedBox(height: 65.h,),
+            Center(child: DropDownComponent()),
+            Spacer(),
+            Center(child: DefaultButton(onPressed: (){},label: 'Done',height: 45.h,width: 244.w,),),
+          ],
         ),
       ),
     );
