@@ -58,8 +58,9 @@ dependencies:
   awesome_dialog: ^2.2.1
   google_maps_flutter: ^2.1.9
   pinput: ^2.2.12
-  contacts_service: ^0.4.6
   permission_handler: ^10.0.0
+  fast_contacts: ^1.1.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
