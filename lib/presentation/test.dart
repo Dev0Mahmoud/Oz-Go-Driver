@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:oz_go_driver/presentation/screens/contact_screen.dart';
+
+
+import 'package:oz_go_driver/presentation/view/ride_history.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oz_go_driver/presentation/view/app_drawer.dart';
+import 'package:oz_go_driver/presentation/view/otp.dart';
+import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
+import 'package:oz_go_driver/presentation/screens/user/trip_start_screen.dart';
 
 
 class Test extends StatefulWidget {
@@ -14,6 +21,13 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return ContactScreen();
+    return Scaffold(
+      body: CustomAppBar(
+        isShortArrow: true,
+        title: 'Test',
+        textAlign: TextAlign.center,
+        height: 100.h,
+      ),
+    );
   }
 }
