@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/constants/assets_manager.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
+import 'package:oz_go_driver/presentation/widget/default_form_field.dart';
 import 'package:oz_go_driver/presentation/widget/quick_comment_selection.dart';
 import '../styles/colors.dart';
 import '../widget/default_button.dart';
@@ -14,6 +15,8 @@ class ReviewBottomSheet extends StatefulWidget {
 }
 
 class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
+  TextEditingController? controller;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -107,30 +110,27 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
                   runAlignment: WrapAlignment.start,
                   children: [
                     QuickCommentSelection(
-                        onTap: () {
-                          /// Todo:
-                        },
+                        onTap: () {},
                         width: 180.w,
                         text: 'Concerned about the captain\'s needs'),
                     QuickCommentSelection(
                       width: 120.w,
                       text: ' Very friendly',
-                      onTap: () {
-                        /// Todo:
-                      },
+                      onTap: () {},
                     ),
                     QuickCommentSelection(
                       width: 120.w,
                       text: 'Fantastic track',
-                      onTap: () {
-                        /// Todo:
-                      },
+                      onTap: () {},
                     ),
                     QuickCommentSelection(
                       width: 120.w,
                       text: 'Fantastic driving',
                       onTap: () {
-                        /// Todo:
+                        setState(() {
+                          controller?.text = 'adasdasd';
+                        });
+                        print(controller!.text);
                       },
                     ),
                   ],
@@ -138,6 +138,16 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
               ),
               SizedBox(
                 height: 30.h,
+              ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30.h),
+                child: TextField(
+                  controller: controller,
+                  onChanged: (value) {
+                    print(value);
+                  },
+                ),
               ),
 
               /// Send Button

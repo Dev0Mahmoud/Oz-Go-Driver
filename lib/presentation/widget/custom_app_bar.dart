@@ -26,9 +26,11 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.w,
+      ),
       decoration: BoxDecoration(
-        gradient: AppGradient.primaryGradient,
+        color: AppColor.buttonColor,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -59,6 +61,7 @@ class CustomAppBar extends StatelessWidget {
               style: TextStyle(
                   color: AppColor.white,
                   fontSize: 25.sp,
+                  fontFamily: 'Mont',
                   fontWeight: FontWeight.w700),
             ),
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
+import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 
 class DefaultButton extends StatelessWidget {
   DefaultButton(
@@ -8,6 +10,9 @@ class DefaultButton extends StatelessWidget {
       required this.onPressed,
       required this.height,
       required this.width,
+      this.color = AppColor.buttonColor,
+      this.secondColor = AppColor.buttonSecondColor,
+      this.radius = 8,
       this.textStyle})
       : super(key: key);
   TextStyle? textStyle;
@@ -15,6 +20,10 @@ class DefaultButton extends StatelessWidget {
   final Function onPressed;
   final double? width;
   final double? height;
+  final Color color;
+  final Color secondColor;
+  final double radius;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,12 +33,9 @@ class DefaultButton extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment(0.0, 0.0),
           end: Alignment.bottomRight,
-          colors: [
-            AppColor.buttonColor,
-            AppColor.buttonSecondColor.withOpacity(.8)
-          ],
+          colors: [color, secondColor.withOpacity(.8)],
         ),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(radius),
       ),
       child: MaterialButton(
         minWidth: 0,
@@ -41,9 +47,10 @@ class DefaultButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              label,
-              style: textStyle,
+            MediumText(
+              text: label,
+              fontSize: 17.sp,
+              color: AppColor.white,
               textAlign: TextAlign.center,
             ),
           ],

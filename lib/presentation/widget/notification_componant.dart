@@ -5,9 +5,9 @@ import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 
 class NotificationComponent extends StatelessWidget {
-
-  final VoidCallback onTap ;
-  const NotificationComponent({Key? key,required this.onTap}) : super(key: key);
+  final VoidCallback onTap;
+  const NotificationComponent({Key? key, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,33 @@ class NotificationComponent extends StatelessWidget {
         width: double.infinity,
         child: Row(
           children: [
-            Expanded(child: Icon(Icons.check_circle,color: AppColor.blue,size: 24.r,)),
+            Expanded(
+                child: Container(
+                    width: 40.w,
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.grey.withOpacity(.2),
+                    ),
+                    child: ShaderMask(
+                      shaderCallback: (Rect bounds) {
+                        return LinearGradient(
+                          colors: [
+                            AppColor.buttonSecondColor,
+                            AppColor.buttonColor,
+                          ],
+                          stops: [0.0, 1.0],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          tileMode: TileMode.mirror,
+                        ).createShader(bounds);
+                      },
+                      child: Icon(
+                        Icons.check_circle,
+                        size: 24.r,
+                        color: Colors.white,
+                      ),
+                    ))),
             SizedBox(
               width: 10.w,
             ),
@@ -28,11 +54,25 @@ class NotificationComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MediumText(text: 'System'),
+                  Text(
+                    'System',
+                    style: TextStyle(
+                        fontFamily: 'SF',
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w600),
+                  ),
                   SizedBox(
                     height: 4.h,
                   ),
-                  RegularText(text: 'Your Booking #1234 has been successfully completed',maxLines: 1 ,overflow: TextOverflow.ellipsis,),
+                  Text(
+                    'Your Booking #1234 has been successfully completed',
+                    style: TextStyle(
+                        fontFamily: 'SF',
+                        fontSize: 17.sp,
+                        color: AppColor.rideHistoryFontColor),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               ),
             ),

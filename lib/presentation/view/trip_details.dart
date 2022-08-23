@@ -2,17 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/view/customer_driver_header_view.dart';
+import 'package:oz_go_driver/presentation/widget/default_button.dart';
 import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 import 'package:oz_go_driver/presentation/widget/total_price.dart';
 import 'package:oz_go_driver/presentation/widget/trip_date_component.dart';
 
+import '../../constants/constants.dart';
+
 class TripDetailsView extends StatelessWidget {
-  const TripDetailsView({Key? key}) : super(key: key);
+  const TripDetailsView({Key? key , this.isTripDetails = true}) : super(key: key);
+  final bool isTripDetails ;
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.r)
+      ),
       child: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 25.w ,vertical: 22.h),
         child: Column(
@@ -119,49 +126,63 @@ class TripDetailsView extends StatelessWidget {
             SizedBox(
               height: 25.h,
             ),
-            price(context,name: 'Trip Fares',price: 50),
-            SizedBox(
-              height: 16.h,
-            ),
-            price(context,name: 'App Fee',price: 05.00),
-            SizedBox(
-              height: 16.h,
-            ),
-            price(context,name: 'Tax',price: 2.00),
-            SizedBox(
-              height: 16.h,
-            ),
-            price(context,name: 'Tolls',price: 8.00),
-            SizedBox(
-              height: 16.h,
-            ),
-            price(context,name: 'Discount',price: 25),
-            SizedBox(
-              height: 16.h,
-            ),
-            price(context,name: 'Topup',price: 20),
-            SizedBox(
-              height: 32.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            if(isTripDetails)
+              Column(
               children: [
-                MediumText(text: 'Total Price',color:AppColor.blue ,),
-                TotalPrice(width: 70,height: 70,fontSize: 18,),
+                price(context,name: 'Trip Fares',price: 50),
+                SizedBox(
+                  height: 16.h,
+                ),
+                price(context,name: 'App Fee',price: 05.00),
+                SizedBox(
+                  height: 16.h,
+                ),
+                price(context,name: 'Tax',price: 2.00),
+                SizedBox(
+                  height: 16.h,
+                ),
+                price(context,name: 'Tolls',price: 8.00),
+                SizedBox(
+                  height: 16.h,
+                ),
+                price(context,name: 'Discount',price: 25),
+                SizedBox(
+                  height: 16.h,
+                ),
+                price(context,name: 'Topup',price: 20),
+                SizedBox(
+                  height: 32.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MediumText(text: 'Total Price',color:AppColor.blue ,),
+                    TotalPrice(width: 70,height: 70,fontSize: 18,),
+                  ],
+                ),
               ],
-            ),
+            )
+            else
+              Column(
+                children: [
+                  MediumText(text: 'Total Price'),
+                  SizedBox(
+                    height: 32.h,
+                  ),
+                  TotalPrice(),
+                  SizedBox(
+                    height: 32.h,
+                  ),
+                  DefaultButton(label: 'paid', onPressed: (){}, height: 56.h, width: double.infinity)
+                ],
+              ),
           ],
         ),
       ),
     );
   }
 
-  Widget settings (BuildContext context , {String? name , String? number}) => Column(
-    children: [
-      RegularText(text: name!,),
-      RegularText(text: number!,),
-    ],
-  );
+
 
   Widget price (BuildContext context , {String? name , double? price}) => Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
