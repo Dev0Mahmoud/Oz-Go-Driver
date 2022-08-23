@@ -80,6 +80,7 @@ flutter:
     - assets/images/
     - assets/icon/
     - assets/i18n/
+    - assets/background/
 
   #   - family: Trajan Pro
   fonts:
