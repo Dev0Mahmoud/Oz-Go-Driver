@@ -1,35 +1,15 @@
 
+import 'package:equatable/equatable.dart';
+import 'package:fast_contacts/fast_contacts.dart';
+
 import '../../data/models/account_model.dart';
 
 abstract class GlobalState {}
 
 class GlobalInitial extends GlobalState {}
 
-class LoginLoadingState extends GlobalState {}
+class LoadingContacts extends GlobalState{}
 
-class LoginSuccessState extends GlobalState {
-  final AccountModel accountModel;
-  LoginSuccessState(this.accountModel);
-}
+class GotContacts extends GlobalState{}
 
-class LoginErrorState extends GlobalState {
-  final String error;
-  LoginErrorState(this.error);
-}
-
-class RegisterLoadingState extends GlobalState {}
-
-class RegisterSuccessState extends GlobalState {}
-
-class RegisterErrorState extends GlobalState {
-  final String error;
-  RegisterErrorState(this.error);
-}
-
-class ChangeToEnLangState extends GlobalState {}
-
-class ChangeToArLangState extends GlobalState {}
-
-class ErrorChangeLangState extends GlobalState {}
-
-class ChangeViewState extends GlobalState {}
+class NoContacts extends GlobalState{}
