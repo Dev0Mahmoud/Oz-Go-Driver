@@ -27,32 +27,31 @@ class DefaultFormField extends StatefulWidget {
   bool? noInput;
   TextDirection? textDirection;
 
-  DefaultFormField({
-    required this.controller,
-    this.label,
-    this.height,
-    this.hintText,
-    required this.keyboard,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.suffixPressed,
-    this.labelStyle,
-    this.hintStyle,
-    this.formFieldStyle,
-    this.errorStyle,
-    this.cursorColor,
-    this.fillColor,
-    this.focusedBorderColor,
-    this.borderColor,
-    this.errorBorderColor,
-    this.validateText,
-    this.onChanged,
-    this.onSubmitted,
-    this.isPassword,
-    this.noInput,
-    this.textDirection,
-    this.onTap
-  });
+  DefaultFormField(
+      {required this.controller,
+      this.label,
+      this.height,
+      this.hintText,
+      required this.keyboard,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.suffixPressed,
+      this.labelStyle,
+      this.hintStyle,
+      this.formFieldStyle,
+      this.errorStyle,
+      this.cursorColor,
+      this.fillColor,
+      this.focusedBorderColor,
+      this.borderColor,
+      this.errorBorderColor,
+      this.validateText,
+      this.onChanged,
+      this.onSubmitted,
+      this.isPassword,
+      this.noInput,
+      this.textDirection,
+      this.onTap});
 
   @override
   State<DefaultFormField> createState() => _DefaultFormFieldState();
@@ -92,7 +91,8 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
             filled: true,
             fillColor: widget.fillColor ?? Colors.white,
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: widget.focusedBorderColor ?? Colors.black),
+              borderSide:
+                  BorderSide(color: widget.focusedBorderColor ?? Colors.black),
               borderRadius: BorderRadius.circular(8.r),
             ),
             enabledBorder: OutlineInputBorder(
@@ -100,7 +100,8 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
               borderRadius: BorderRadius.circular(8.r),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: widget.errorBorderColor ?? Colors.red),
+              borderSide:
+                  BorderSide(color: widget.errorBorderColor ?? Colors.red),
               borderRadius: BorderRadius.circular(8.r),
             ),
             errorStyle: widget.errorStyle,
@@ -123,11 +124,9 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
                   color: Colors.grey,
                 ),
           ),
-
           keyboardType: widget.keyboard,
           obscureText: widget.isPassword ?? false,
-onTap: widget.onTap,
-
+          onTap: widget.onTap,
         ),
       ),
     );

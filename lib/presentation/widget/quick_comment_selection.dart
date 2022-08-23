@@ -10,7 +10,7 @@ class QuickCommentSelection extends StatelessWidget {
   void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
       child: Container(
           width: width,

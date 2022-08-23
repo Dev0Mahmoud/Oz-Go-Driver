@@ -54,6 +54,9 @@ class CustomerDriverHeaderView extends StatelessWidget {
                 if (isTitle)
                   MediumText(
                     text: 'Hossam Saeed',
+                    fontSize: 18.sp,
+                    fontFamily: 'Mont',
+                    fontWeight: FontWeight.w400,
                   )
                 else
                   title!,

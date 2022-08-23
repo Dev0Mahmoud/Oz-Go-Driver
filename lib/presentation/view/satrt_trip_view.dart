@@ -13,8 +13,7 @@ class StartTripView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Padding(
         padding: EdgeInsets.all(20.r),
@@ -25,11 +24,21 @@ class StartTripView extends StatelessWidget {
               isSuffix: false,
               suffix: Row(
                 children: [
-                  CircleAvatar(backgroundColor: AppColor.buttonColor,child: Icon(Icons.message,color: AppColor.white,)),
+                  CircleAvatar(
+                      backgroundColor: AppColor.buttonColor,
+                      child: Icon(
+                        Icons.message,
+                        color: AppColor.white,
+                      )),
                   SizedBox(
                     width: 5.w,
                   ),
-                  CircleAvatar(backgroundColor: AppColor.green,child: Icon(Icons.phone,color: AppColor.white,)),
+                  CircleAvatar(
+                      backgroundColor: AppColor.green,
+                      child: Icon(
+                        Icons.phone,
+                        color: AppColor.white,
+                      )),
                 ],
               ),
             ),
@@ -47,16 +56,11 @@ class StartTripView extends StatelessWidget {
             SizedBox(
               height: 23.h,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                DefaultButton(
-                  label: 'Start',
-                  onPressed: () {},
-                  height: 56.h,
-                  width: 320.w,
-                ),
-              ],
+            DefaultButton(
+              label: 'Start',
+              onPressed: () {},
+              height: 56.h,
+              width: 320.w,
             )
           ],
         ),
