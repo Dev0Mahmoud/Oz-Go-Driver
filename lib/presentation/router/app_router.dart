@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:oz_go_driver/presentation/router/app_router_names.dart';
+import 'package:oz_go_driver/presentation/screens/user/chat_screen.dart';
 import 'package:oz_go_driver/presentation/screens/user/trip_request_screen.dart';
 import 'package:oz_go_driver/presentation/test.dart';
 
 import '../screens/shared/splash_screen.dart';
 import '../screens/user/checkout_screen.dart';
 import '../screens/user/contact_screen.dart';
+import '../screens/user/contact_us_screen.dart';
 import '../screens/user/history_screen.dart';
 import '../screens/user/infite_firend_screen.dart';
 import '../screens/user/language_screen.dart';
@@ -98,12 +100,11 @@ class AppRouter {
         );
       case AppRouterNames.rCheckoutRoute:
         return MaterialPageRoute(
-          builder: (_) => ContactUsScreen(),
+          builder: (_) => CheckOutScreen(),
         );
       case AppRouterNames.rChatRoute:
         return MaterialPageRoute(
-          // todo
-          builder: (_) => Test(),
+          builder: (_) => ChatScreen(),
         );
       case AppRouterNames.rCustomerReviewRoute:
         return MaterialPageRoute(
