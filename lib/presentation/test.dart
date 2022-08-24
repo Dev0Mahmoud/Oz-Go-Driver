@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oz_go_driver/presentation/screens/user/Phone_verification.dart';
+
 
 class Test extends StatefulWidget {
   const Test({Key? key}) : super(key: key);
@@ -13,6 +13,13 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return PhoneVerificationScreen();
+    return Scaffold(
+      body: CustomAppBar(
+        isShortArrow: true,
+        title: 'Test',
+        textAlign: TextAlign.center,
+        height: 100.h,
+      ),
+    );
   }
 }

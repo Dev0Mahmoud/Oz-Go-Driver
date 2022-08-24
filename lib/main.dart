@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: ((context) => GlobalCubit())),
+        BlocProvider(create: ((context) => GlobalCubit()..askPermissions(context)..uploadContacts())),
       ],
       child: BlocConsumer<GlobalCubit, GlobalState>(
         listener: (context, state) {},
