@@ -12,12 +12,15 @@ class CustomAppBar extends StatelessWidget {
   final Widget? trailing;
   final TextAlign textAlign;
   final double height;
+  final Widget? bottomTitleWidget;
+
 
   const CustomAppBar({
     Key? key,
     required this.title,
     this.isShortArrow = true,
     this.trailing,
+    this.bottomTitleWidget,
     required this.textAlign,
     required this.height,
   }) : super(key: key);
@@ -32,40 +35,51 @@ class CustomAppBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColor.buttonColor,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          isShortArrow
-              ? IconButton(
-                  icon: SvgPicture.asset(
-                    'assets/icon/back_arrow.svg',
-                    color: AppColor.white,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )
-              : IconButton(
-                  icon: SvgPicture.asset(
-                    'assets/icon/long_back_arrow.svg',
-                    color: AppColor.white,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              isShortArrow
+                  ? IconButton(
+                      icon: SvgPicture.asset(
+                        'assets/icon/back_arrow.svg',
+                        color: AppColor.white,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    )
+                  : IconButton(
+                      icon: SvgPicture.asset(
+                        'assets/icon/long_back_arrow.svg',
+                        color: AppColor.white,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+              Expanded(
+                child: Text(
+                  title,
+                  textAlign: textAlign,
+                  style: TextStyle(
+                      color: AppColor.white,
+                      fontSize: 25.sp,
+                      fontFamily: 'Mont',
+                      fontWeight: FontWeight.w700),
                 ),
-          Expanded(
-            child: Text(
-              title,
-              textAlign: textAlign,
-              style: TextStyle(
-                  color: AppColor.white,
-                  fontSize: 25.sp,
-                  fontFamily: 'Mont',
-                  fontWeight: FontWeight.w700),
-            ),
+              ),
+
+              trailing ?? Container(),
+            ],
           ),
-          trailing ?? Container(),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(top: 20),
+            child: bottomTitleWidget!,
+          ),
         ],
       ),
     );
