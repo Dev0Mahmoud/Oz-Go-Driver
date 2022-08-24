@@ -142,11 +142,22 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
 
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 30.h),
-                child: TextField(
+                child: DefaultFormField(
+                  height: 70.h,
+                  keyboard: TextInputType.text,
                   controller: controller,
-                  onChanged: (value) {
-                    print(value);
-                  },
+                  hintText: 'I encountered some problems',
+                  label: 'leave a comment',
+                  labelStyle: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Mont',
+                      color: AppColor.black,
+                      fontSize: 10.sp),
+                  hintStyle: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Mont',
+                      color: AppColor.black,
+                      fontSize: 10.sp),
                 ),
               ),
 
