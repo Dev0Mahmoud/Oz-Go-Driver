@@ -4,8 +4,8 @@ import 'package:oz_go_driver/business_logic/global_cubit/global_cubit.dart';
 import 'package:oz_go_driver/presentation/view/contact_list.dart';
 import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
 
-import '../styles/colors.dart';
-import '../widget/default_form_field.dart';
+import '../../styles/colors.dart';
+import '../../widget/default_form_field.dart';
 
 class ContactScreen extends StatefulWidget {
    ContactScreen({Key? key}) : super(key: key);
