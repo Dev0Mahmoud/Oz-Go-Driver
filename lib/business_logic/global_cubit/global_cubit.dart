@@ -61,8 +61,18 @@ class GlobalCubit extends Cubit<GlobalState> {
       print(x.displayName);
     }
   }
+  List<bool> isChecked = List.generate(2000, (index) => false);
 
+void Checked({value, index}){
+    isChecked[index] = value;
+    print(value.toString());
+    emit(checked());
+}
+List<Contact> contactSearched = [];
 
-
-
+void ContactSearch(String value){
+  emit(Searching());
+  contactSearched = contacts!.where((element)=> element.displayName.startsWith(value)).toList();
+  emit(FinishedSearching());
+}
 }
