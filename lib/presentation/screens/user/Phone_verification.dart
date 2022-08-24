@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
+import 'package:oz_go_driver/presentation/view/otp.dart';
 import 'package:oz_go_driver/presentation/widget/default_button.dart';
 
 class PhoneVerificationScreen extends StatefulWidget {
@@ -71,118 +72,7 @@ class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
           Form(
               child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 60.w,
-                  child: TextFormField(
-                    onTap: () {
-                      setState(() {
-                        hintText1 = '';
-                      });
-                    },
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                        setState(() {
-                          hintText2 = '';
-                        });
-                      }
-                    },
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    decoration: InputDecoration(
-                        hintText: hintText1,
-                        hintStyle: TextStyle(
-                            fontSize: 36.sp,
-                            fontFamily: 'SF',
-                            color: Colors.black)),
-                  ),
-                ),
-                Container(
-                  width: 60.w,
-                  child: TextFormField(
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                        setState(() {
-                          hintText3 = '';
-                        });
-                      }
-                    },
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    decoration: InputDecoration(
-                        hintText: hintText2,
-                        hintStyle: TextStyle(
-                            fontSize: 36.sp,
-                            fontFamily: 'SF',
-                            color: Colors.black)),
-                  ),
-                ),
-                Container(
-                  width: 60.w,
-                  child: TextFormField(
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                        setState(() {
-                          hintText4 = '';
-                        });
-                      }
-                    },
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    decoration: InputDecoration(
-                        hintText: hintText3,
-                        hintStyle: TextStyle(
-                            fontSize: 36.sp,
-                            fontFamily: 'SF',
-                            color: Colors.black)),
-                  ),
-                ),
-                Container(
-                  width: 60.w,
-                  child: TextFormField(
-                    onTap: () {
-                      setState(() {
-                        hintText4 = '';
-                      });
-                    },
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                      }
-                    },
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    decoration: InputDecoration(
-                        hintText: hintText4,
-                        hintStyle: TextStyle(
-                            fontSize: 36.sp,
-                            fontFamily: 'SF',
-                            color: Colors.black)),
-                  ),
-                )
-              ],
-            ),
+            child: Otp(),
           )),
           SizedBox(
             height: 50.h,

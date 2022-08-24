@@ -29,12 +29,21 @@ class _SplashScreenState extends State<SplashScreen> {
         Scaffold(
           backgroundColor: AppColor.buttonColor,
           body: Center(
-            child: HeadLineText(text: 'OZ GO',color: AppColor.white,fontSize: 64.sp,),
+            child: HeadLineText(
+              text: 'OZ GO',
+              color: AppColor.white,
+              fontSize: 64.sp,
+            ),
           ),
         ),
         Positioned(
           bottom: 0,
-          child: Image.asset(AssetsManager.splashBg,fit: BoxFit.cover,color: Colors.white.withOpacity(0.2), colorBlendMode: BlendMode.modulate,),
+          child: Image.asset(
+            AssetsManager.splashBg,
+            fit: BoxFit.cover,
+            color: Colors.white.withOpacity(0.2),
+            colorBlendMode: BlendMode.modulate,
+          ),
         ),
       ],
     );
