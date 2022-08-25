@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oz_go_driver/presentation/router/app_router_names.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/view/otp.dart';
 import 'package:oz_go_driver/presentation/widget/default_button.dart';
@@ -78,7 +79,9 @@ class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
             height: 50.h,
           ),
           DefaultButton(
-              label: 'Verify Now', onPressed: () {}, height: 45.h, width: 300.w)
+              label: 'Verify Now', onPressed: () {
+                Navigator.pushReplacementNamed(context, AppRouterNames.rTripRequestRoute);
+          }, height: 45.h, width: 300.w)
         ],
       ),
     );

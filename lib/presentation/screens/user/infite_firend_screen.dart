@@ -31,7 +31,9 @@ class InviteFriendScreen extends StatelessWidget {
                       Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context,AppRouterNames.rSignInRoute);
+                            },
                             icon: Icon(
                               Icons.arrow_back_ios,
                               color: AppColor.white,
