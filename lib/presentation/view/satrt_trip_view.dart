@@ -34,7 +34,7 @@ class StartTripView extends StatelessWidget {
                       ),
                     ),
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, AppRouterNames.rChatRoute);
+                      Navigator.pushNamed(context, AppRouterNames.rChatRoute);
                     },
                   ),
                   SizedBox(
@@ -66,7 +66,7 @@ class StartTripView extends StatelessWidget {
             DefaultButton(
               label: 'Start',
               onPressed: () {
-                Navigator.pushNamed(
+                Navigator.pushReplacementNamed(
                     context, AppRouterNames.rTripeEndRoute);
               },
               height: 56.h,

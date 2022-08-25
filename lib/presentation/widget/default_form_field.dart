@@ -79,8 +79,8 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
       key: formKey,
       child: Container(
         padding: widget.outFormPadding ??EdgeInsetsDirectional.all(10),
-        height: widget.height ?? 60.h,
-        width: double.infinity,
+        height: widget.height ?? 68.h,
+        width: double.infinity.w,
         child: TextFormField(
           textDirection: widget.textDirection,
           style: widget.formFieldStyle ?? TextStyle(color: Colors.black),

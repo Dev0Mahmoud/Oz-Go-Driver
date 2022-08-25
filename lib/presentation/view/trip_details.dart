@@ -175,7 +175,7 @@ class TripDetailsView extends StatelessWidget {
                     height: 32.h,
                   ),
                   DefaultButton(label: 'paid', onPressed: (){
-                    Navigator.pushReplacementNamed(context, AppRouterNames.rCustomerReviewRoute);
+                    Navigator.pushReplacementNamed(context, AppRouterNames.rTripRequestRoute);
                   }, height: 56.h, width: double.infinity)
                 ],
               ),

@@ -21,7 +21,6 @@ class ContactList extends StatelessWidget {
     return BlocConsumer<GlobalCubit, GlobalState>(
         listener: (context, state) {},
         builder: (context, state) {
-            cubit.askPermissions(context);
           if (list.isNotEmpty) {
             return ListView.builder(
                 itemCount: list.length,

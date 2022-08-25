@@ -30,7 +30,7 @@ class AppRouter {
     switch (settings.name) {
       case AppRouterNames.rSplashRoute:
         return MaterialPageRoute(
-          builder: (_) => TripRequestScreen(),
+          builder: (_) => SplashScreen(),
         );
       case AppRouterNames.rSignInRoute:
         return MaterialPageRoute(

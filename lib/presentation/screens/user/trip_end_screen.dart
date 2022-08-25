@@ -13,6 +13,8 @@ import 'package:oz_go_driver/presentation/widget/default_form_field.dart';
 import 'package:oz_go_driver/presentation/widget/switch_button.dart';
 
 import '../../router/app_router_names.dart';
+import '../../widget/medium_text.dart';
+import '../../widget/regular_text.dart';
 
 class TripEndScreen extends StatelessWidget {
   TripEndScreen({Key? key}) : super(key: key);
@@ -40,7 +42,25 @@ class TripEndScreen extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(context: context, builder: (context){
+                            return AlertDialog(
+                              title: MediumText(text: 'Did you finish the trip?'),
+                              actions: <Widget>[
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pushReplacementNamed(context, AppRouterNames.rTripRequestRoute);
+                                    },
+                                    child: Text('Cancel trip',style: TextStyle(color: AppColor.red),)),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Stay',style: TextStyle(color: AppColor.blue),)),
+                              ],
+                            );
+                          });
+                        },
                         child: Container(
                           height: 65.h,
                           width: 65.w,

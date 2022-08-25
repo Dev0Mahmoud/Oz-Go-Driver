@@ -60,7 +60,7 @@ class _ContactScreenState extends State<ContactScreen> {
                 ),
         ),
       ),
-      body: controller.text.isEmpty ? ContactList(list: GlobalCubit.get(context).contacts ?? [],):ContactList(list: GlobalCubit.get(context).contactSearched,),
+      body: controller.text.isEmpty ? ContactList(list: GlobalCubit.get(context).contacts!,):ContactList(list: GlobalCubit.get(context).contactSearched,),
     );
   }
 }
