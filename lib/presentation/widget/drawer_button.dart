@@ -10,12 +10,13 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 class DrawerButton extends StatelessWidget {
   final String iconPath;
   final String title;
-  final String appRoute;
+  final VoidCallback onTap;
+
   const DrawerButton({
     Key? key,
     required this.iconPath,
     required this.title,
-    required this.appRoute,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -30,9 +31,7 @@ class DrawerButton extends StatelessWidget {
         title,
         style: TextStyle(color: AppColor.drawerIcon, fontSize: 16.sp),
       ),
-      onTap: () {
-        Navigator.pushNamed(context, appRoute);
-      },
+      onTap: onTap
     );
   }
 }

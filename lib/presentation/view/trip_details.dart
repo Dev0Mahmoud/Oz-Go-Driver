@@ -9,6 +9,7 @@ import 'package:oz_go_driver/presentation/widget/total_price.dart';
 import 'package:oz_go_driver/presentation/widget/trip_date_component.dart';
 
 import '../../constants/constants.dart';
+import '../router/app_router_names.dart';
 
 class TripDetailsView extends StatelessWidget {
   const TripDetailsView({Key? key , this.isTripDetails = true}) : super(key: key);
@@ -173,7 +174,9 @@ class TripDetailsView extends StatelessWidget {
                   SizedBox(
                     height: 32.h,
                   ),
-                  DefaultButton(label: 'paid', onPressed: (){}, height: 56.h, width: double.infinity)
+                  DefaultButton(label: 'paid', onPressed: (){
+                    Navigator.pushReplacementNamed(context, AppRouterNames.rCustomerReviewRoute);
+                  }, height: 56.h, width: double.infinity)
                 ],
               ),
           ],

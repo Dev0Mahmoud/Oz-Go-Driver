@@ -4,6 +4,7 @@ import 'package:oz_go_driver/constants/assets_manager.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
 
+import '../../router/app_router_names.dart';
 import '../../widget/custom_app_bar.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -58,7 +59,7 @@ class SettingScreen extends StatelessWidget {
                   Spacer(),
                   IconButton(
                       onPressed: () {
-                        /// routing
+
                       },
                       icon: Icon(
                         Icons.arrow_forward_ios,
@@ -100,7 +101,7 @@ class SettingScreen extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              /// routing
+                              Navigator.pushNamed(context, AppRouterNames.rNotificationSwitchRoute);
                             },
                             icon: Icon(
                               Icons.arrow_forward_ios,
@@ -142,7 +143,7 @@ class SettingScreen extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              /// routing
+                              Navigator.pushNamed(context, AppRouterNames.rLanguageRoute);
                             },
                             icon: Icon(
                               Icons.arrow_forward_ios,
@@ -187,7 +188,7 @@ class SettingScreen extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              /// routing
+                              Navigator.pushNamed(context, AppRouterNames.rTermsRoute);
                             },
                             icon: Icon(
                               Icons.arrow_forward_ios,
@@ -208,7 +209,7 @@ class SettingScreen extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              /// routing
+                              Navigator.pushNamed(context, AppRouterNames.rContactUsRoute);
                             },
                             icon: Icon(
                               Icons.arrow_forward_ios,
@@ -228,7 +229,7 @@ class SettingScreen extends StatelessWidget {
             /// logout
             InkWell(
               onTap: () {
-                /// routing
+                Navigator.pushReplacementNamed(context, AppRouterNames.rSignInRoute);
               },
               child: Container(
                 padding: EdgeInsets.only(left: 10.w, top: 10.h, bottom: 10.h),

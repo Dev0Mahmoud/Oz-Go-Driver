@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oz_go_driver/presentation/router/app_router_names.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/default_button.dart';
+import 'package:oz_go_driver/presentation/widget/default_form_field.dart';
+import 'package:oz_go_driver/presentation/widget/default_phone_number_form_field.dart';
 import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 
 class SignInView extends StatelessWidget {
-  const SignInView({Key? key}) : super(key: key);
+  SignInView({Key? key}) : super(key: key);
+
+  var phoneController = TextEditingController();
+  var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,29 +40,23 @@ class SignInView extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 69.h,
+              height: 58.h,
             ),
             RegularText(text: 'Login With Your Phone Number',color: AppColor.black,),
             SizedBox(
               height: 30.h,
             ),
-            // todo phone number form field
-            Container(
-              height: 45,
-              color: AppColor.red,
-            ),
+            DefaultPhoneNumFormField(controller: phoneController, label: '01158822107'),
             SizedBox(
               height: 17.h,
             ),
-            // todo password form field
-            Container(
-              height: 45,
-              color: AppColor.green,
-            ),
+            DefaultFormField(controller: passwordController, keyboard: TextInputType.text),
             SizedBox(
               height:25.h,
             ),
-            DefaultButton(label: 'Next', onPressed: (){}, height: 56.h,width: double.infinity,)
+            DefaultButton(label: 'Next', onPressed: (){
+              Navigator.pushReplacementNamed(context, AppRouterNames.rVerificationRoute);
+            }, height: 56.h,width: double.infinity,)
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oz_go_driver/presentation/router/app_router_names.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/from_to_component.dart';
 
@@ -103,7 +104,11 @@ class RideHistory extends StatelessWidget {
                     TextButton(
 
                         /// routing
-                        onPressed: () {},
+                        onPressed: () {
+                          if (tripStatusText == 'Completed'){
+                            Navigator.pushNamed(context, AppRouterNames.rYourTripeRoute);
+                          }
+                        },
                         child: Text(
                           tripStatusText,
                           style: TextStyle(
