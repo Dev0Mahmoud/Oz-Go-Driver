@@ -82,7 +82,7 @@ class AppDrawer extends StatelessWidget {
           ),
           DrawerButton(
             onTap: () =>
-                Navigator.pushNamed(context, AppRouterNames.rTripRequestRoute),
+                Navigator.pop(context),
             iconPath: 'assets/icon/home.svg',
             title: 'Home',
           ),

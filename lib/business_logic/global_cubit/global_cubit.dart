@@ -2,8 +2,6 @@ import 'package:fast_contacts/fast_contacts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:permission_handler/permission_handler.dart';
-import '../../constants/end_points.dart';
-import '../../data/local/cache_helper.dart';
 
 import 'global_state.dart';
 

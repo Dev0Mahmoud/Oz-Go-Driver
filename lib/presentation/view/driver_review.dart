@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/constants/assets_manager.dart';
+
 import '../styles/colors.dart';
 import '../widget/circle_avatar.dart';
 import '../widget/medium_text.dart';

@@ -107,7 +107,7 @@ class TripRequestView extends StatelessWidget {
                 children: [
                   DefaultButton(label: 'Cancel', onPressed: (){}, height: 56.h, width: 144.w,color: AppColor.red,secondColor: AppColor.red,),
                   DefaultButton(label: 'Accept', onPressed: (){
-                    Navigator.pushNamed(context, AppRouterNames.rTripeStartRoute);
+                    Navigator.pushReplacementNamed(context, AppRouterNames.rTripeStartRoute);
 
                   }, height: 56.h, width: 144.w,),
                 ],

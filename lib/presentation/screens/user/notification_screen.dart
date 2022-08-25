@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oz_go_driver/constants/assets_manager.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
-import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
 import 'package:oz_go_driver/presentation/widget/notification_componant.dart';
 
 import '../../widget/custom_app_bar.dart';

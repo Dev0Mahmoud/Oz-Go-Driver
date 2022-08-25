@@ -50,7 +50,7 @@ class SignInView extends StatelessWidget {
             SizedBox(
               height: 17.h,
             ),
-            DefaultFormField(controller: passwordController, keyboard: TextInputType.text),
+            DefaultFormField(controller: passwordController, keyboard: TextInputType.visiblePassword,outFormPadding: EdgeInsets.zero,isPassword: true,hintText: 'Password',),
             SizedBox(
               height:25.h,
             ),

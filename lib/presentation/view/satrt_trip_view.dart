@@ -5,7 +5,6 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import '../../constants/constants.dart';
 import '../router/app_router_names.dart';
 import '../widget/default_button.dart';
-import '../widget/from_to_component.dart';
 import 'customer_driver_header_view.dart';
 
 class StartTripView extends StatelessWidget {
@@ -34,7 +33,7 @@ class StartTripView extends StatelessWidget {
                       ),
                     ),
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, AppRouterNames.rChatRoute);
+                      Navigator.pushNamed(context, AppRouterNames.rChatRoute);
                     },
                   ),
                   SizedBox(
@@ -66,7 +65,7 @@ class StartTripView extends StatelessWidget {
             DefaultButton(
               label: 'Start',
               onPressed: () {
-                Navigator.pushNamed(
+                Navigator.pushReplacementNamed(
                     context, AppRouterNames.rTripeEndRoute);
               },
               height: 56.h,

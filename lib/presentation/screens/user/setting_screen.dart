@@ -59,7 +59,7 @@ class SettingScreen extends StatelessWidget {
                   Spacer(),
                   IconButton(
                       onPressed: () {
-
+                        Navigator.pushNamed(context, AppRouterNames.rProfileRoute);
                       },
                       icon: Icon(
                         Icons.arrow_forward_ios,

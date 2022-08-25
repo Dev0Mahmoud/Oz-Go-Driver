@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oz_go_driver/constants/assets_manager.dart';
 
 class DefaultCircleAvatar extends StatelessWidget {
   DefaultCircleAvatar({Key? key, required this.imageName, required this.radius,this.onTap})

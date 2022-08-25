@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/view/contact_us_view.dart';
-import 'package:oz_go_driver/presentation/view/terms_view.dart';
 
 import '../../widget/custom_app_bar.dart';
 
