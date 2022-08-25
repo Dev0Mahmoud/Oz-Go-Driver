@@ -24,6 +24,7 @@ class _ContactScreenState extends State<ContactScreen> {
 
         preferredSize: Size(double.infinity.w, 180.h),
         child: CustomAppBar(
+          isSearch: true,
           height: 180.h,
           title: 'Invite Friends',
           textAlign: TextAlign.center,

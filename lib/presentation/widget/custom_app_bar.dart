@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget {
   final TextAlign textAlign;
   final double height;
   final Widget? bottomTitleWidget;
+  final bool isSearch ;
 
 
   const CustomAppBar({
@@ -23,6 +24,7 @@ class CustomAppBar extends StatelessWidget {
     this.bottomTitleWidget,
     required this.textAlign,
     required this.height,
+    this.isSearch = false ,
   }) : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: bottomTitleWidget == null ? MainAxisAlignment.start : MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center ,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -79,7 +81,8 @@ class CustomAppBar extends StatelessWidget {
               trailing ?? Container(),
             ],
           ),
-          Padding(
+          if(isSearch == true)
+            Padding(
             padding: EdgeInsetsDirectional.only(top: 20.h,start: 20.w,),
             child: bottomTitleWidget,
           ),

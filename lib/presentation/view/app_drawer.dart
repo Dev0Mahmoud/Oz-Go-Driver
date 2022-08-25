@@ -28,7 +28,7 @@ class AppDrawer extends StatelessWidget {
                   imageName: 'assets/images/moha.jpg',
                   radius: 50.r,
                   onTap: () {
-                    Navigator.pushReplacementNamed(
+                    Navigator.pushNamed(
                         context, AppRouterNames.rProfileRoute,);
                   },
                 ),
