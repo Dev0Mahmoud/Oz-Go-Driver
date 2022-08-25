@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:oz_go_driver/constants/assets_manager.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
-import 'package:oz_go_driver/presentation/view/review_bottom_sheet.dart';
 import 'package:oz_go_driver/presentation/view/satrt_trip_view.dart';
-import 'package:oz_go_driver/presentation/view/trip_request_view.dart';
-import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
-import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
-import 'package:oz_go_driver/presentation/widget/headline_text.dart';
 import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
-import 'package:oz_go_driver/presentation/widget/switch_button.dart';
 
 import '../../router/app_router_names.dart';
-import '../../widget/default_button.dart';
 
 class TripStartScreen extends StatelessWidget {
    TripStartScreen({Key? key}) : super(key: key);

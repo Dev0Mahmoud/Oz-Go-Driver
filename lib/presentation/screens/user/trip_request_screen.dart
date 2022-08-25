@@ -6,7 +6,6 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/view/app_drawer.dart';
 import 'package:oz_go_driver/presentation/view/trip_request_view.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
-import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
 import 'package:oz_go_driver/presentation/widget/switch_button.dart';
 
 class TripRequestScreen extends StatelessWidget {

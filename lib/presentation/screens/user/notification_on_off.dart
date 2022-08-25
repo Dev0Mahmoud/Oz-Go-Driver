@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/widget/switch_button.dart';
 
-import '../../styles/colors.dart';
-
 class NotificationSwitch extends StatelessWidget {
   NotificationSwitch({Key? key}) : super(key: key);
 

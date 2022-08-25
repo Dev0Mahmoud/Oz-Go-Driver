@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oz_go_driver/business_logic/global_cubit/global_cubit.dart';
 import 'package:oz_go_driver/business_logic/global_cubit/global_state.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
-import 'package:oz_go_driver/presentation/widget/default_form_field.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class ContactList extends StatelessWidget {
   final List<Contact> list ;

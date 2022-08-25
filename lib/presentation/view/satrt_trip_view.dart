@@ -5,7 +5,6 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import '../../constants/constants.dart';
 import '../router/app_router_names.dart';
 import '../widget/default_button.dart';
-import '../widget/from_to_component.dart';
 import 'customer_driver_header_view.dart';
 
 class StartTripView extends StatelessWidget {

@@ -5,9 +5,6 @@ import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
 import 'package:oz_go_driver/presentation/widget/default_button.dart';
 import 'package:oz_go_driver/presentation/widget/default_indicator.dart';
-import 'package:oz_go_driver/presentation/widget/notification_componant.dart';
-
-import '../../widget/custom_app_bar.dart';
 
 class MyWalletScreen extends StatelessWidget {
   MyWalletScreen({Key? key}) : super(key: key);

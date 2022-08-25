@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/medium_text.dart';
 import 'package:oz_go_driver/presentation/widget/regular_text.dart';
 

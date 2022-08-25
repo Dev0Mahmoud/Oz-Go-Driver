@@ -4,7 +4,6 @@ import 'package:oz_go_driver/presentation/screens/user/chat_screen.dart';
 import 'package:oz_go_driver/presentation/screens/user/profile_screen.dart';
 import 'package:oz_go_driver/presentation/screens/user/sign_in_screen.dart';
 import 'package:oz_go_driver/presentation/screens/user/trip_end_screen.dart';
-
 import 'package:oz_go_driver/presentation/screens/user/trip_request_screen.dart';
 import 'package:oz_go_driver/presentation/test.dart';
 
