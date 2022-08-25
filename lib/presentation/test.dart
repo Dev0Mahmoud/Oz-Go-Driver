@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:oz_go_driver/presentation/screens/user/sign_in_screen.dart';
 import 'package:oz_go_driver/presentation/widget/custom_app_bar.dart';
-
 
 import 'package:oz_go_driver/presentation/view/ride_history.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +27,7 @@ class _TestState extends State<Test> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: SignInScreen()),
+          Center(child: ProfileScreen()),
         ],
       ),
     );

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DefaultFormField extends StatefulWidget {
-  final TextEditingController? controller;
+  TextEditingController? controller;
   String? label;
   double? height;
+  double? radius;
+  EdgeInsetsGeometry? contentPadding;
+  EdgeInsetsGeometry? outFormPadding;
   String? hintText;
   final TextInputType? keyboard;
   Icon? prefixIcon;
@@ -51,20 +54,31 @@ class DefaultFormField extends StatefulWidget {
       this.isPassword,
       this.noInput,
       this.textDirection,
-      this.onTap});
+      this.onTap,
+        this.radius,
+        this.contentPadding,
+        this.outFormPadding,
+      });
 
   @override
-  State<DefaultFormField> createState() => _DefaultFormFieldState();
+  State<DefaultFormField> createState() => _DefaultFormFieldState(
+      this.controller
+  );
 }
 
 class _DefaultFormFieldState extends State<DefaultFormField> {
   GlobalKey<FormState>? formKey = GlobalKey<FormState>();
+  TextEditingController? controller;
+
+  _DefaultFormFieldState( this.controller);
+
 
   @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: SizedBox(
+      child: Container(
+        padding: widget.outFormPadding ??EdgeInsetsDirectional.all(10),
         height: widget.height ?? 60.h,
         width: double.infinity,
         child: TextFormField(
@@ -87,22 +101,22 @@ class _DefaultFormFieldState extends State<DefaultFormField> {
           controller: widget.controller,
           decoration: InputDecoration(
             enabled: true,
-            contentPadding: EdgeInsets.all(15.r),
+            contentPadding: widget.contentPadding ?? EdgeInsets.all( 15.r),
             filled: true,
             fillColor: widget.fillColor ?? Colors.white,
             focusedBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: widget.focusedBorderColor ?? Colors.black),
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(widget.radius ?? 8.r),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: widget.borderColor ?? Colors.black),
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(widget.radius ?? 8.r),
             ),
             errorBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: widget.errorBorderColor ?? Colors.red),
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(widget.radius ?? 8.r),
             ),
             errorStyle: widget.errorStyle,
             labelText: widget.label,
