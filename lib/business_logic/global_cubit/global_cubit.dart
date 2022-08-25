@@ -72,7 +72,7 @@ List<Contact> contactSearched = [];
 
 void ContactSearch(String value){
   emit(Searching());
-  contactSearched = contacts!.where((element)=> element.displayName.startsWith(value)).toList();
+  contactSearched = contacts!.where((element)=> element.displayName.toLowerCase().startsWith(value.toLowerCase())).toList();
   emit(FinishedSearching());
 }
 }
