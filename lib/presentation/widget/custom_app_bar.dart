@@ -29,23 +29,24 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
-      ),
+      padding: EdgeInsetsDirectional.only(top: 25.h,end: 20.w),
       decoration: BoxDecoration(
         color: AppColor.buttonColor,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: bottomTitleWidget == null ? MainAxisAlignment.start : MainAxisAlignment.end,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
+
             children: [
               isShortArrow
                   ? IconButton(
+                padding: EdgeInsets.zero,
                       icon: SvgPicture.asset(
                         'assets/icon/back_arrow.svg',
+
                         color: AppColor.white,
                       ),
                       onPressed: () {
@@ -53,9 +54,11 @@ class CustomAppBar extends StatelessWidget {
                       },
                     )
                   : IconButton(
+                padding: EdgeInsets.zero,
                       icon: SvgPicture.asset(
                         'assets/icon/long_back_arrow.svg',
                         color: AppColor.white,
+
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -77,7 +80,7 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.only(top: 20),
+            padding: EdgeInsetsDirectional.only(top: 20.h,start: 20.w,),
             child: bottomTitleWidget,
           ),
         ],

@@ -21,6 +21,7 @@ class ContactList extends StatelessWidget {
     return BlocConsumer<GlobalCubit, GlobalState>(
         listener: (context, state) {},
         builder: (context, state) {
+            cubit.askPermissions(context);
           if (list.isNotEmpty) {
             return ListView.builder(
                 itemCount: list.length,
@@ -51,7 +52,10 @@ class ContactList extends StatelessWidget {
                     const Divider()
                   ]);
                 });
-          } else if (state is LoadingContacts) {
+          } else if(list.isEmpty){
+            cubit.askPermissions(context);
+          }
+            else if (state is LoadingContacts) {
             return Center(child: CircularProgressIndicator());
           }
           return SizedBox();
