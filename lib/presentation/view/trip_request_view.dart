@@ -6,6 +6,7 @@ import 'package:oz_go_driver/presentation/widget/default_button.dart';
 import 'package:oz_go_driver/presentation/widget/from_to_component.dart';
 
 import '../../constants/constants.dart';
+import '../router/app_router_names.dart';
 import '../styles/colors.dart';
 import '../widget/regular_text.dart';
 
@@ -105,7 +106,10 @@ class TripRequestView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   DefaultButton(label: 'Cancel', onPressed: (){}, height: 56.h, width: 144.w,color: AppColor.red,secondColor: AppColor.red,),
-                  DefaultButton(label: 'Accept', onPressed: (){}, height: 56.h, width: 144.w,),
+                  DefaultButton(label: 'Accept', onPressed: (){
+                    Navigator.pushNamed(context, AppRouterNames.rTripeStartRoute);
+
+                  }, height: 56.h, width: 144.w,),
                 ],
               )
             ],

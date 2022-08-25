@@ -15,6 +15,7 @@ class CheckOutScreen extends StatelessWidget {
             title: 'Checkout',
             textAlign: TextAlign.start,
             height: 150.h,
+
           )),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
