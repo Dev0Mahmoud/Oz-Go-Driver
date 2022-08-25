@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oz_go_driver/presentation/router/app_router_names.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 import 'package:oz_go_driver/presentation/widget/circle_avatar.dart';
 
@@ -24,7 +25,13 @@ class AppDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultCircleAvatar(
-                    imageName: 'assets/images/moha.jpg', radius: 50.r),
+                  imageName: 'assets/images/moha.jpg',
+                  radius: 50.r,
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                        context, AppRouterNames.rProfileRoute,);
+                  },
+                ),
                 SizedBox(height: 20.h),
                 Text(
                   'Moha',
@@ -74,43 +81,50 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rTripRequestRoute),
             iconPath: 'assets/icon/home.svg',
             title: 'Home',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rMyWalletRoute),
             iconPath: 'assets/icon/wallet.svg',
             title: 'My Wallet',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rHistoryRoute),
             iconPath: 'assets/icon/history.svg',
             title: 'History',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rNotificationRoute),
             iconPath: 'assets/icon/notification.svg',
             title: 'Notification',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rInviteRoute),
             iconPath: 'assets/icon/invite.svg',
             title: 'Invite Friend',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () =>
+                Navigator.pushNamed(context, AppRouterNames.rSettingsRoute),
             iconPath: 'assets/icon/settings.svg',
             title: 'Settings',
           ),
           SizedBox(height: 20.h),
           DrawerButton(
-            appRoute: '/',
+            onTap: () => Navigator.pushReplacementNamed(
+                context, AppRouterNames.rSignInRoute),
             iconPath: 'assets/icon/logout.svg',
             title: 'Log Out',
           ),

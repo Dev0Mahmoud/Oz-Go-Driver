@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:oz_go_driver/presentation/router/app_router_names.dart';
 import 'package:oz_go_driver/presentation/screens/user/chat_screen.dart';
+import 'package:oz_go_driver/presentation/screens/user/sign_in_screen.dart';
+import 'package:oz_go_driver/presentation/screens/user/trip_end_screen.dart';
 
 import 'package:oz_go_driver/presentation/screens/user/trip_request_screen.dart';
 import 'package:oz_go_driver/presentation/test.dart';
@@ -26,12 +28,11 @@ class AppRouter {
     switch (settings.name) {
       case AppRouterNames.rSplashRoute:
         return MaterialPageRoute(
-          builder: (_) => ContactScreen(),
+          builder: (_) => TripRequestScreen(),
         );
       case AppRouterNames.rSignInRoute:
         return MaterialPageRoute(
-          // todo
-          builder: (_) => Test(),
+          builder: (_) => SignInScreen(),
         );
       case AppRouterNames.rVerificationRoute:
         return MaterialPageRoute(
@@ -64,7 +65,7 @@ class AppRouter {
         );
       case AppRouterNames.rTripeEndRoute:
         return MaterialPageRoute(
-          builder: (_) => TripStartScreen(),
+          builder: (_) => TripEndScreen(),
         );
       case AppRouterNames.rTripeStartRoute:
         return MaterialPageRoute(

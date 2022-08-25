@@ -12,6 +12,8 @@ import 'package:oz_go_driver/presentation/widget/default_button.dart';
 import 'package:oz_go_driver/presentation/widget/default_form_field.dart';
 import 'package:oz_go_driver/presentation/widget/switch_button.dart';
 
+import '../../router/app_router_names.dart';
+
 class TripEndScreen extends StatelessWidget {
   TripEndScreen({Key? key}) : super(key: key);
   TextEditingController? controller;
@@ -101,7 +103,10 @@ class TripEndScreen extends StatelessWidget {
                       EdgeInsets.symmetric(vertical: 40.h, horizontal: 10.w),
                   child: DefaultButton(
                     label: 'End',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, AppRouterNames.rCheckoutRoute);
+
+                    },
                     height: 55.h,
                     width: 344.w,
                   ),

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oz_go_driver/presentation/styles/colors.dart';
 
 import '../../constants/constants.dart';
+import '../router/app_router_names.dart';
 import '../widget/default_button.dart';
 import '../widget/from_to_component.dart';
 import 'customer_driver_header_view.dart';
@@ -24,12 +25,18 @@ class StartTripView extends StatelessWidget {
               isSuffix: false,
               suffix: Row(
                 children: [
-                  CircleAvatar(
+                  InkWell(
+                    child: CircleAvatar(
                       backgroundColor: AppColor.buttonColor,
                       child: Icon(
                         Icons.message,
                         color: AppColor.white,
-                      )),
+                      ),
+                    ),
+                    onTap: (){
+                      Navigator.pushReplacementNamed(context, AppRouterNames.rChatRoute);
+                    },
+                  ),
                   SizedBox(
                     width: 5.w,
                   ),
@@ -58,7 +65,10 @@ class StartTripView extends StatelessWidget {
             ),
             DefaultButton(
               label: 'Start',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                    context, AppRouterNames.rTripeEndRoute);
+              },
               height: 56.h,
               width: 320.w,
             )
