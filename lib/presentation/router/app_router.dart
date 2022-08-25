@@ -26,7 +26,7 @@ class AppRouter {
     switch (settings.name) {
       case AppRouterNames.rSplashRoute:
         return MaterialPageRoute(
-          builder: (_) => SplashScreen(),
+          builder: (_) => ContactScreen(),
         );
       case AppRouterNames.rSignInRoute:
         return MaterialPageRoute(

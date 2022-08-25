@@ -29,6 +29,8 @@ class _ContactScreenState extends State<ContactScreen> {
           textAlign: TextAlign.center,
           isShortArrow: true,
           bottomTitleWidget: DefaultFormField(
+            focusedBorderColor: AppColor.white.withOpacity(0.38),
+            cursorColor: AppColor.white.withOpacity(0.38),
             formFieldStyle: TextStyle(color: AppColor.white),
                   controller: controller,
                   keyboard: TextInputType.text,
@@ -47,7 +49,7 @@ class _ContactScreenState extends State<ContactScreen> {
 
             onChanged: (value){
               setState((){
-                controller.text = value;
+                // controller.text = value;
                 print(value);
 
                 GlobalCubit.get(context).ContactSearch(value);

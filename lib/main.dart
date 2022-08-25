@@ -65,8 +65,8 @@ class _MyAppState extends State<MyApp> {
                     localizationsDelegates: context.localizationDelegates,
                     supportedLocales: context.supportedLocales,
                     locale: context.locale,
-                    // onGenerateRoute: widget.appRouter.onGenerateRoute,
-                    home: ProfileScreen(),
+                    onGenerateRoute: widget.appRouter.onGenerateRoute,
+                    // home: ProfileScreen(),
                   );
                 },
               );
